@@ -28,11 +28,11 @@
 			</label>
 			<label for="email">
 				Email
-				<input id="email" name="email" type="email" placeholder="Email">
+				<input id="email" name="email" type="email" placeholder="Email" required pattern=".{2,200}">
 			</label>
 			<label for="message">
 				Message
-				<textarea id="message" name="message" placeholder="Message" rows="5"></textarea>
+				<textarea id="message" name="message" placeholder="Message" rows="5" required pattern=".{2,1000}"></textarea>
 			</label>
 			<button class="button">Contact Us</button>
 		</form>
