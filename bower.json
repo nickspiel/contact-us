@@ -1,0 +1,20 @@
+{
+  "name": "Contact Us",
+  "version": "0.1",
+  "dependencies": {
+    "jquery": "2.1.1"
+  },
+  "install": {
+    "path": {
+      "css": "website/styles",
+      "js": "website/scripts"
+    },
+    "sources": {
+      "jquery": "bower_components/jquery/dist/jquery.min.js"
+    }
+  },
+  "devDependencies": {
+    "jquery-validation": "~1.13.0",
+    "sweetalert": "~0.1.1"
+  }
+}

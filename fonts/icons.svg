@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>
+Created by FontForge 20120731 at Tue Oct  7 22:13:53 2014
+ By Nick Spiel
+Created by Nick Spiel with FontForge 2.0 (http://fontforge.sf.net)
+</metadata>
+<defs>
+<font id="icons" horiz-adv-x="166" >
+  <font-face 
+    font-family="icons"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="464"
+    panose-1="2 0 6 3 0 0 0 0 0 0"
+    ascent="448"
+    descent="-16"
+    bbox="0 0 341 386"
+    underline-thickness="0"
+    underline-position="-2"
+    unicode-range="U+F101-F102"
+  />
+<missing-glyph 
+d="M15 0v309h121v-309h-121zM30 15h91v279h-91v-279z" />
+    <glyph glyph-name=".notdef" 
+d="M15 0v309h121v-309h-121zM30 15h91v279h-91v-279z" />
+    <glyph glyph-name=".null" horiz-adv-x="0" 
+ />
+    <glyph glyph-name="nonmarkingreturn" horiz-adv-x="154" 
+ />
+    <glyph glyph-name="uniF101" unicode="&#xf101;" horiz-adv-x="341" 
+d="M170 46q-70 0 -120 50t-50 120t50 120t120 50q71 0 121 -50t50 -120t-50 -120t-121 -50zM170 328q-46 0 -79 -33t-33 -79t33 -79t79 -33q47 0 80 33t33 79t-33 79t-80 33z" />
+    <glyph glyph-name="uniF102" unicode="&#xf102;" horiz-adv-x="275" 
+d="M275 337l-107 -107l107 -106l-31 -31l-106 107l-107 -107l-31 31l107 106l-107 107l31 31l107 -107l106 107z" />
+  </font>
+</defs></svg>

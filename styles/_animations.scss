@@ -1,0 +1,22 @@
+ /* -------------------------------------------- Animations */
+
+@include keyframes(slideLeft) {
+	from { 
+		opacity: 0;
+		@include transform(translateX(4rem));
+	}
+}
+
+@include keyframes(slideRight) {
+	from { 
+		opacity: 0;
+		@include transform(translateX(-4rem));
+	}
+}
+
+@include keyframes(slideDown) {
+	from { 
+		opacity: 0;
+		@include transform(translateY(-4rem));
+	}
+}

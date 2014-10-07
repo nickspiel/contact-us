@@ -1,0 +1,43 @@
+ /* -------------------------------------------- Layout Metrics */
+
+$content-max-width: 75rem; // 1200px
+
+/* -------------------------------------------- Color palette */
+
+$colors: (
+	grey: (
+		light: #dddddd,
+		base: #777777,
+		dark: #555555
+	),
+	red: (
+		base: #ff0000
+	)
+);
+
+/* -------------------------------------------- zIndex Management */
+
+$zindexLevels: (
+	modal: 50, 
+	navigation: 40,
+	overlay: 30,
+	header: 20,
+	footer: 10
+);
+
+/* -------------------------------------------- Breakpoints */
+
+$breakpoints: (
+	small: 35rem,
+	medium: 55rem,
+	large: 75rem,
+	extra-large: 90rem
+);
+
+/* -------------------------------------------- Fonts */
+
+/* -------------------------------- Proxima Nova */
+
+@include font-face("Proxima Nova", "../fonts/proxima-nova/proxima-nova-regular");
+@include font-face("Proxima Nova", "../fonts/proxima-nova/proxima-nova-light", 200);
+@include font-face("Proxima Nova", "../fonts/proxima-nova/proxima-nova-bold", bold);

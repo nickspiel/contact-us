@@ -1,0 +1,152 @@
+ /* -------------------------------------------- Media query mixin */
+
+$fix-mqs: false !default;
+
+@mixin breakpoint($width) {
+	@if $fix-mqs {
+		@if $fix-mqs >= map-get($breakpoints, $width) {
+			@content;
+		}
+	}
+	@else {
+		@media screen and (min-width: map-get($breakpoints, $width)) {
+			@content;
+		}
+	}
+}
+
+/* -------------------------------------------- Old-IE only styles */
+
+$old-ie: false !default;
+
+@mixin old-ie {
+	@if $old-ie {
+		@content;
+	}
+}
+
+/* -------------------------------------------- Pluck colors from a map */
+
+@function color($color, $tone: 'base') {
+	@return map-get(map-get($colors, $color), $tone);
+}
+
+/* -------------------------------------------- Pluck zindex level from a map */
+
+@function z-index($level) {
+	@return map-get($zindexLevels, $level);
+}
+
+/* -------------------------------------------- Set up image path */
+
+@function image-url($image) {
+	@return 'url("/mysite/images/#{$image}")';
+}
+
+/* -------------------------------------------- Global horizontal container */
+
+@mixin container {
+	width: 100%;
+	max-width: $content-max-width;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* -------------------------------------------- Remove whitespace */
+
+@mixin remove-whitespace {
+	font-size: 0;
+	> * {
+		font-size: 1rem;
+	}
+}
+
+/* -------------------------------------------- Hide text */
+
+%hide-text {
+	font-size: 0;
+	> * {
+		font-size: 1rem;
+	}
+}
+
+/* -------------------------------------------- Headings */
+
+$all-headings: h1, h2, h3, h4, h5, h6;
+
+/* -------------------------------------------- Stagger transitions */
+
+@mixin stagger-transition($start, $items, $initial-pause, $delay, $child-element: null) {
+	@for $i from $start through $items {
+		&:nth-child(#{$items}n+#{$i}) {
+			@if $child-element {
+				#{$child-element} {
+					@include transition-delay(#{$delay * $i + $initial-pause + s});
+					opacity: 0.8;
+				}
+			} @else {
+				@include transition-delay((#{$delay * $i + $initial-pause + s}));
+			}
+		}
+	} 
+}
+
+@mixin stagger-animation($start, $items, $initial-pause, $delay, $child-element: null) {
+	@for $i from $start through $items {
+		&:nth-child(#{$items}n+#{$i}) {
+			@if $child-element {
+				#{$child-element} {
+					@include animation-delay(#{$delay * $i + $initial-pause + s});
+					opacity: 0.8;
+				}
+			} @else {
+				@include animation-delay((#{$delay * $i + $initial-pause + s}));
+			}
+		}
+	} 
+}
+
+/* -------------------------------------------- RGBA Mixin for old IE */
+
+@mixin background-rgba($rgba) {
+	@if $old-ie {
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str($rgba)},endColorstr=#{ie-hex-str($rgba)}); 
+	} @else {
+		background-color: $rgba;
+	}
+}
+
+/* -------------------------------------------- Background cover */
+
+@mixin background-cover($horizontal: 'center', $vertical: 'center' ) {
+	background: no-repeat;
+	background-color: color(grey, light); /*  Placeholder background color so user knows an image is lodaing in this space */
+	background-size: cover;
+	background-position: #{$horizontal} #{$vertical};
+	background-repeat: no-repeat;
+}
+
+/* -------------------------------------------- Clear-fix */
+
+@mixin clear-fix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+/* -------------------------------------------- Vertical align middle */
+
+@mixin vertical-middle {
+	&:before {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+	> * {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}

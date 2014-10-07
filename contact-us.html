@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contact Us</title>
+	<link rel="stylesheet" type="text/css" href="/styles/global.css">
+</head>
+<body>
+	<h1 class="heading">Contact Us</h1>
+	<section class="contact-us">		
+		<aside class="contact-details">
+			<div class="intro">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati quibusdam, sed sint facere consectetur fugiat.</p>
+				<p>Vel porro, consequuntur neque laudantium provident inventore autem dolore recusandae. Minus porro hic non, blanditiis ad quasi obcaecati voluptas veritatis dicta mollitia.</p>
+			</div>
+			<p class="address"><strong>Address:</strong> 123 Contact Street</p>
+			<p class="phone"><strong>Phone:</strong> <a href="tel:1234567890">1234 567 890</a></p>
+			<p class="email"><strong>Email:</strong> <a href="mailto:contact@contact.com">contact@contact.com</a></p>
+		</aside>
+		<form action="/process-form.php" method="POST" id="contact-form" class="contact-form">
+			<label for="first-name">
+				First Name
+				<input id="first-name" name="first-name" type="text" placeholder="First name" required pattern=".{2,200}">
+			</label>
+			<label for="last-name">
+				Last Name
+				<input id="last-name" name="last-name" type="text" placeholder="Last name" required pattern=".{2,200}">
+			</label>
+			<label for="email">
+				Email
+				<input id="email" name="email" type="email" placeholder="Email">
+			</label>
+			<label for="message">
+				Message
+				<textarea id="message" name="message" placeholder="Message" rows="5"></textarea>
+			</label>
+			<button class="button">Contact Us</button>
+		</form>
+	</section>
+	<script src="/scripts/scripts.js"></script>
+</body>
+</html>

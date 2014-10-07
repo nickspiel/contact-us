@@ -1,0 +1,95 @@
+// ------------------------------------------------------ Body
+
+body {
+	font-family: "Proxima Nova"; // Fix broken inheritance
+}
+
+// ------------------------------------------------------ Heading
+
+.heading {
+	text-align: center;
+	font-size: 2rem;
+	padding: 1rem;
+	color: white;
+	background: color(grey);
+	@include animation(slideDown 1s $ease-out-quad backwards);
+}
+
+// ------------------------------------------------------ Contact Us
+
+.contact-us {
+	@include remove-whitespace;
+	.contact-details,
+	.contact-form {
+		vertical-align: middle;
+		width: 40rem;
+		max-width: 100%;
+		margin: 0 auto;
+		@include breakpoint(medium) {
+			display: inline-block;
+			width: percentage(1/2);
+		}
+	}
+
+// --------------------------- Contact Details
+
+	.contact-details {
+		padding: 2rem;
+		@include animation(slideRight 1s 0.25s $ease-out-quad backwards);
+		p {
+			margin-bottom: 1rem;
+		}
+	}
+
+// --------------------------- Contact Form
+
+	.contact-form {
+		text-align: center;
+		padding: 2rem;
+		background-color: color(grey, light);
+		@include animation(slideLeft 1s 0.5s $ease-out-quad backwards);
+		label {
+			position: relative;
+			display: block;
+			margin-bottom: 1rem;
+			@include remove-whitespace;
+			#{$all-text-inputs},
+			textarea {
+				font-size: 1.2rem;
+				width: 100%;
+				border: solid 1px color(grey, light);
+				padding: 0.5rem 1rem;
+				margin: 0;
+				&.error {
+					border-color: color(red);
+					padding-top: 1.5rem;
+				}
+			}
+			textarea {
+				font-family: "Proxima Nova"; // Fix broken inheritance
+			}
+			label.error {
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: 0.25rem;
+				font-size: 0.75rem;
+				background-color: rgba(color(red), 0.75);
+				color: white;
+				@include icon(before, cross) {
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 0.5rem;
+				}
+			}
+		}
+		.button {
+			padding: 1rem 3rem;
+			font-size: 1.2rem;
+			background-color: color(grey);
+			color: white;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+	}
+}

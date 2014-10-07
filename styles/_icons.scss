@@ -1,0 +1,27 @@
+// Declare icon font
+@include font-face('icons', '../fonts/icons');
+
+// List icons
+$icons: (
+	circle: "\f101",
+	cross: "\f102",
+);
+
+// Icon mixin
+@mixin icon($position: before, $icon: false, $styles: true) {
+    @if $position == both {
+        $position: 'before, &:after';
+    }
+    &:#{$position} {
+        @if $icon {
+            content: "#{map-get($icons, $icon)}";
+        }
+        @if $styles {
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-family: 'icons';
+        }
+        @content;
+    }
+}
